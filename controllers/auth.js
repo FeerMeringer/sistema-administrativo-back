@@ -41,6 +41,35 @@ const signIn = async (req, res) => {
     }
 };
 
-export default signIn;
+
+
+const signOut = async (req, res, next) => {
+    const { username } = req.body;
+    try {
+        // Actualizamos el estado en línea del usuario a false al cerrar sesión
+        const user = await User.findOneAndUpdate(
+            { username },
+            { new: true }
+        );
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'Usuario no encontrado'
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: 'Cierre de sesión exitoso'
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+
+export { signIn, signOut };
 
 

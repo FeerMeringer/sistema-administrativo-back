@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "data_user": "node ./models/data/user"
+    "data_user": "node ./models/data/user",
+    "data_producto": "node ./models/data/producto.js"
   },
   "type": "module",
   "dependencies": {

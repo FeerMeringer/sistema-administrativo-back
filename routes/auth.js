@@ -1,16 +1,16 @@
-import express from 'express'
-import validator from '../middlewares/validator.js'
-import schema from '../schemas/users.js'
-import controller from '../controllers/auth.js'
+import express from 'express';
+import validator from '../middlewares/validator.js';
+import userSchema from '../schemas/user.js';
+import { signIn, signOut } from '../controllers/auth.js';
+
+const router = express.Router();
 
 
-const { sign_in} = controller
+// Rutas de autenticación
+router.post('/signin', validator(userSchema), signIn);
+router.post('/signout', signOut) 
 
-let router = express.Router();
+export default router;
 
 
-router.post('/signin', validator(schema), sign_in )
 
-
-// module.exports = router;
-export default router
