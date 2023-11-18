@@ -8,6 +8,11 @@
     "data_user": "node ./models/data/user",
     "data_producto": "node ./models/data/producto.js"
   },
+  "engines": {
+    "node": "20.9.0",
+    "npm": "6.14.0"
+  },
+  
   "type": "module",
   "dependencies": {
     "bcryptjs": "^2.4.3",
