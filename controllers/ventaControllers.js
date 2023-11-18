@@ -1,4 +1,4 @@
-import Venta from '../models/Ventas.js';
+import Venta from '../models/ventas.js';
 
 const ventaControllers = {
     create: async (req, res, next) => {
